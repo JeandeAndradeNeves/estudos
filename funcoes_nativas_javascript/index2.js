@@ -1,18 +1,20 @@
-let tabela = [
-    {equipe: 'Time Azul', pontos: 25 },
-    {equipe: 'Time Verde', pontos: 47 },
-    {equipe: 'Time Amarelo', pontos: 39 },
-    {equipe: 'Time Vermelho', pontos: 16 },
-];
 
-function ordenaMaisPontos(a, b){
-    return b.pontos - a.pontos;
-}
 
-tabela.sort(ordenaMaisPontos);
+const dataAtual = new Date();
+const dataPostagem = new Date('2020-11-11T00:00');
 
-for(let i = 0; i < tabela.length; i++)
-{
-    let posicao = i+1;
-    console.log(posicao+" | "+tabela[i].equipe+" - "+tabela[i].pontos+" pts");
-}
+// Pegando o timestamp das datas
+const timeAtual = dataAtual.getTime();
+const timePostagem = dataPostagem.getTime();
+
+// Verifica a diferença em milissegundos
+const diferenca = timeAtual - timePostagem;
+
+// Convertendo em horas
+const segundos = diferenca / 1000;
+const minutos = segundos / 60;
+const horas = minutos / 60;
+
+// Exibindo a diferença
+console.log(dataAtual.getMonth() + 1);
+
